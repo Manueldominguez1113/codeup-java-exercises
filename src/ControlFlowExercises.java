@@ -67,7 +67,7 @@ public class ControlFlowExercises {
 // ===------------- tables ---------===
 
         Scanner scan = new Scanner(System.in);
-
+/*
 
         System.out.println("Enter a number to go up to: ");
         String input = "y";
@@ -92,12 +92,10 @@ public class ControlFlowExercises {
            } else {
                System.out.println("Thank you! Goodbye!");
            }
-        }   // I can easily refactor this - why do I need to make an int do while, when the while does everything but better y'know?
-            // but it works 🤷🏽‍
-
+        }  */
 
         /* =====--------------- Grading Scale ---------------===== */
-/*
+
         String testInput = "y";
         while (testInput.equalsIgnoreCase("y")) {
             System.out.println("input the number of your grade: ");
@@ -157,7 +155,7 @@ public class ControlFlowExercises {
                 System.out.println("Would you like to keep going?: (Y/N)");
                 testInput = scan.next();
             }
-*/
+
 
 
 
@@ -184,5 +182,6 @@ public class ControlFlowExercises {
     }
 
 
+}
 }
 
