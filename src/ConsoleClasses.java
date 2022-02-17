@@ -10,7 +10,7 @@ public class ConsoleClasses {
 
 
         Scanner scanner = new Scanner(System.in);
-//       scanner.useDelimiter("\n"); // made no difference? but when i change from new line. i cannot continue.
+//       scanner.useDelimiter("\n");
         /*
         System.out.print("Enter a sentence: ");
         String userInput1 = scanner.nextLine();
@@ -46,7 +46,7 @@ Process finished with exit code 1
 //            float w =Float.parseFloat(widthInput);
 
 
-        System.out.println("enter the length of the room: ");
+/*        System.out.println("enter the length of the room: ");
         int l = scanner.nextInt();
         System.out.println("enter the width of the room: ");
         int w = scanner.nextInt();
@@ -54,6 +54,7 @@ Process finished with exit code 1
 
         System.out.println("You're area: --> \" "+ l*w +"  \" <--");
         System.out.println("You're perimeter: --> \" "+ ((2*l)+(2*w)) +"  \" <--");
+        */
   // I don't see delimiter doing anything in this scenario. but i read it can be used to separate input by specific characters.
     }
 }

@@ -2,10 +2,11 @@ import java.util.Scanner;
 
 public class ControlFlowExercises {
     public static void main(String[] args) {
-//        int i =5;
-//        while(i <=15){
-//            System.out.println(i);
-//            i++;
+    /*   // =====-------while loop
+        int i =5;
+        while(i <=15){
+            System.out.print(i+" ");
+            i++;  */
         //======-------------- do-while loops
 //        int i =0;
 //        do {
@@ -19,11 +20,11 @@ public class ControlFlowExercises {
 //            System.out.println(i);
 //        } while (i>-10);
 
-//        int i =2;
+//        long i =2;
 //        do {
 //            i*=i;
 //            System.out.println(i);
-//        } while (i<60000); // wont run corrently once passes 1million. 60k works better.
+//        } while (i<1000000);
 
 //        =-----------for loops
 
@@ -39,9 +40,9 @@ public class ControlFlowExercises {
 //            System.out.println(i);
 //        }
 
-//        int i = 2;
+//        long i = 2;
 //        System.out.println(i);
-//        for(i=2;i<60000;){
+//        for(i=2;i<1000000;){
 //            i*=i;
 //            System.out.println(i);
 //
@@ -67,22 +68,18 @@ public class ControlFlowExercises {
 
         Scanner scan = new Scanner(System.in);
 
-        /*
+
         System.out.println("Enter a number to go up to: ");
+        String input = "y";
         int num = scan.nextInt();
         int i= 1;
 
         System.out.println("here is your table!");
         System.out.println(" ");
         System.out.println("Number | Squared | Cubed");
-        do{
-            System.out.format("  %-5s|   %-6d|  %-4s \n", i, (i*2),(i*3));
-            i++;
-        } while (i<=num);
-        System.out.println("Would you like to keep going?: (Y/N)");
-        String input = scan.next();
+
         while(input.equalsIgnoreCase("y")){
-            num+=5;
+
             System.out.println("Number | Squared | Cubed");
             do{
                 System.out.format("  %-5s|   %-6d|  %-4s \n", i, (i*2),(i*3));
@@ -90,11 +87,17 @@ public class ControlFlowExercises {
             } while (i<=num);
             System.out.println("Would you like to keep going?: (Y/N)");
             input = scan.next();
+           if (input.equalsIgnoreCase("y")){
+               num+=5;
+           } else {
+               System.out.println("Thank you! Goodbye!");
+           }
         }   // I can easily refactor this - why do I need to make an int do while, when the while does everything but better y'know?
             // but it works 🤷🏽‍
-*/
+
 
         /* =====--------------- Grading Scale ---------------===== */
+/*
         String testInput = "y";
         while (testInput.equalsIgnoreCase("y")) {
             System.out.println("input the number of your grade: ");
@@ -154,8 +157,11 @@ public class ControlFlowExercises {
                 System.out.println("Would you like to keep going?: (Y/N)");
                 testInput = scan.next();
             }
+*/
 
 
+
+        // unused code
         /*       switch(grade){   switch needs exact int. no booleans for switch case in java.
             case(grade< 97 & grade>88 ):
                 System.out.println("You got an A!");
@@ -171,9 +177,9 @@ public class ControlFlowExercises {
                 break;
             default:
                 System.out.println("buh-burr. F! Fail!");
-*/
-        }
 
+        }
+*/
 
     }
 
