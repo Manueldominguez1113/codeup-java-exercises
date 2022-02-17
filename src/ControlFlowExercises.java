@@ -1,11 +1,12 @@
 import java.util.Scanner;
+
 public class ControlFlowExercises {
     public static void main(String[] args) {
 //        int i =5;
 //        while(i <=15){
 //            System.out.println(i);
 //            i++;
- //======-------------- do-while loops
+        //======-------------- do-while loops
 //        int i =0;
 //        do {
 //            i+=2;
@@ -66,6 +67,7 @@ public class ControlFlowExercises {
 
         Scanner scan = new Scanner(System.in);
 
+        /*
         System.out.println("Enter a number to go up to: ");
         int num = scan.nextInt();
         int i= 1;
@@ -90,8 +92,91 @@ public class ControlFlowExercises {
             input = scan.next();
         }   // I can easily refactor this - why do I need to make an int do while, when the while does everything but better y'know?
             // but it works 🤷🏽‍
+*/
 
+        /* =====--------------- Grading Scale ---------------===== */
+        String testInput = "y";
+        while (testInput.equalsIgnoreCase("y")) {
+            System.out.println("input the number of your grade: ");
+            int grade = scan.nextInt();
+            String letter;
+            if (grade < 0 || grade > 100) {
+                System.out.println("invalid entry");
+            } else {
+
+
+                if (grade >= 88) {
+                    letter = "A";
+                    if (grade >= 97) {
+                        letter += "+";
+                    }
+                    if (grade <= 93) {
+                        letter += "-";
+                    }
+                    System.out.format("You got an %2s!\n", letter);
+                } else if (grade >= 80) {
+                    letter = "B";
+                    if (grade >= 86) {
+                        letter += "+";
+                    }
+                    if (grade <= 85) {
+                        letter += "-";
+                    }
+                    System.out.format("You got an %2s!\n", letter);
+                } else if (grade >= 67) {
+                    letter = "C";
+                    if (grade >= 75) {
+                        letter += "+";
+                    }
+                    if (grade <= 72) {
+                        letter += "-";
+                    }
+                    System.out.format("You got an %2s!\n", letter);
+                } else if (grade >= 60) {
+                    letter = "D";
+                    if (grade >= 65) {
+                        letter += "+";
+                    }
+                    if (grade <= 62) {
+                        letter += "-";
+                    }
+                    System.out.format("You got an %2s!\n", letter);
+                } else {
+                    letter = "F";
+                    if (grade >= 55) {
+                        letter += "+";
+                    }
+                    if (grade <= 30) {
+                        letter += "-";
+                    }
+                    System.out.format("You got an %2s!\n", letter);
+                }
+                System.out.println("Would you like to keep going?: (Y/N)");
+                testInput = scan.next();
+            }
+
+
+        /*       switch(grade){   switch needs exact int. no booleans for switch case in java.
+            case(grade< 97 & grade>88 ):
+                System.out.println("You got an A!");
+                break;
+            case(grade< 87 & grade>80):
+                System.out.println("You got a B!");
+                break;
+            case(grade< 79 & grade>67):
+                System.out.println("You got a C!");
+                break;
+            case(grade< 60 & grade>66):
+                System.out.println("You got a D!");
+                break;
+            default:
+                System.out.println("buh-burr. F! Fail!");
+*/
+        }
 
 
     }
+
+
 }
+
