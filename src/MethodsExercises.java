@@ -80,7 +80,7 @@ public class MethodsExercises {
         Scanner rangeNum = new Scanner(System.in);
         int inpt;
         do {
-            System.out.println("Enter a number between 1 and 10: ");
+            System.out.println("Your number: ");
             inpt = rangeNum.nextInt();
             if (inpt < min || inpt > max) {
                 System.out.println("Error! out of range! try again.");
@@ -91,9 +91,9 @@ public class MethodsExercises {
     }
 
     public static int Factorial(){
-        Scanner numberFact = new Scanner(System.in);
-        System.out.println("enter a number to be factorial'd:\n");
-        int input= numberFact.nextInt();
+//        Scanner numberFact = new Scanner(System.in); //no longer necessary as my minmax function will get the right numbers.
+        System.out.println("enter a number to be factorial'd from 1 to 12:\n");
+        int input= getInteger(1,12);
         System.out.format("%s! = ", input);
         return Factoriali(input, input); // total will always start with the same number.
     }
