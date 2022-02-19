@@ -11,7 +11,7 @@ public class MethodsExercises {
             System.out.println(getInteger(1, 10));
 
         } else if (inp.equalsIgnoreCase("Factorial")) {   // added to support factorials in question 3
-            System.out.println("running Factorial.. " + Factorial());
+            System.out.println("\nTotal: " + Factorial());
         } else {
 
             System.out.format("next, input the numbers you'd like to %s\n", inp);
@@ -91,6 +91,21 @@ public class MethodsExercises {
     }
 
     public static int Factorial(){
-        return
+        Scanner numberFact = new Scanner(System.in);
+        System.out.println("enter a number to be factorial'd:\n");
+        int input= numberFact.nextInt();
+        System.out.format("%s! = ", input);
+        return Factoriali(input, input); // total will always start with the same number.
+    }
+
+    public static int Factoriali(int in, int total){
+        in -= 1;
+        if(in <=0){
+            return total;
+        }
+        System.out.format("\n%s * %s =",total, in);
+        total *= in;
+        System.out.format("%s", total);
+        return Factoriali(in,total);
     }
 }
