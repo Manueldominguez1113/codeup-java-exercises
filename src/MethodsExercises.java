@@ -7,8 +7,10 @@ public class MethodsExercises {
         String inp = sc.next();
         // assuming the user puts the correct code so i dont have to fight errors.
         System.out.format("next, input the numbers you'd like to %s\n", inp);
-        System.out.println("number 1:");
-        int numOne=sc.nextInt();
+        /* System.out.println("number 1:");
+        int numOne=sc.nextInt();  */
+                                         //changed to work on question 2.
+        int numOne = getInteger(1, 10);
         System.out.println("number 2:");
         int numTwo=sc.nextInt();
         if (inp.equalsIgnoreCase("add")) {
@@ -35,6 +37,7 @@ public class MethodsExercises {
 
     public static int Multiplication(int first,int second) {
 //        return first * second;
+/*
         int total = 0;
         for(int i =0;i<second;){
 
@@ -42,7 +45,9 @@ public class MethodsExercises {
             i++;
         }
         return total;
-
+*/
+        int total=0;
+    return addIntoItself(first,second, total);
 
     }
 
@@ -56,11 +61,25 @@ public class MethodsExercises {
 
     public static int addIntoItself(int first, int second,int total) {
         if (second <= 0) {
-            System.out.println("All done!");
+            System.out.print("Total: ");
             return total;
         }
         total += first;
-        System.out.println(second);
-        addIntoItself(first,second-1,total);
+        return addIntoItself(first,second-1,total);
+    }
+
+    public static int getInteger(int min, int max) {
+        Scanner rangeNum = new Scanner(System.in);
+        int inpt;
+        do {
+            System.out.println("Enter a number between 1 and 10: ");
+            inpt = rangeNum.nextInt();
+             if(inpt < min || inpt > max ){
+                 System.out.println("Error! out of range! try again.");
+             }
+
+        } while (inpt < min | inpt > max);
+        return inpt;
+
     }
 }
