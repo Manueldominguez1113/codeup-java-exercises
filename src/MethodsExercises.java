@@ -1,10 +1,11 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class MethodsExercises {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Hello!\nwhat would you like to do? type in:\n\"Add\", \"Sub\", \"Multiply\", \"Divide\", \"Modulus\"\n" +
-                "alternatively, type \"range\", \"Factorial\"");
+                "alternatively, type \"range\", \"Factorial\",\"Dice\"");
         String inp = sc.next();
         // assuming the user puts the correct code so i dont have to fight errors.
         if (inp.equalsIgnoreCase("Range")) {  // added to make ranges in question 2
@@ -12,6 +13,16 @@ public class MethodsExercises {
 
         } else if (inp.equalsIgnoreCase("Factorial")) {   // added to support factorials in question 3
             System.out.println("\nTotal: " + Factorial());
+        } else if (inp.equalsIgnoreCase("Dice")) {   // added to support factorials in question 3
+            String answer="y";
+            while (answer.equalsIgnoreCase("y")) {  //did util random.. honestly its the same thing as math.random from reading.
+                System.out.println("how many sides are on your die?\n"); // just need to import java.lang.random instead.
+                int sides = sc.nextInt();
+                System.out.println("\nRolling 2 dice! \n");
+                DiceRoll(sides);
+                System.out.println("\nwould you like to roll again? Y/N");
+                answer = sc.next();
+            }
         } else {
 
             System.out.format("next, input the numbers you'd like to %s\n", inp);
@@ -107,5 +118,13 @@ public class MethodsExercises {
         total *= in;
         System.out.format("%s", total);
         return Factoriali(in,total);
+    }
+
+    public static void DiceRoll(int sides){
+     Random Die = new Random();
+     int dieOne= Die.nextInt((sides-1)+1)+1;  // ((max-min)+1)+min
+     int dieTwo= Die.nextInt((sides-1)+1)+1;
+     int total= dieOne+ dieTwo;
+        System.out.format("Dice rolled! you got %s and %s! total: %s!", dieOne, dieTwo, total);
     }
 }
