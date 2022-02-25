@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Input {
 
-    private static final Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner= new Scanner(System.in);
 
     public static String getString() {
         System.out.println("please write out your string");
@@ -33,7 +33,6 @@ public class Input {
     }
 
     public static int getInt(){
-        System.out.println("input your number:\n");
         return scanner.nextInt();
     }
     public static double getDouble(double min, double max)
@@ -50,7 +49,6 @@ public class Input {
 
     }
     public static double getDouble(){
-        System.out.println("input your number:\n");
         return scanner.nextDouble();
     }
 
