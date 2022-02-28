@@ -4,14 +4,14 @@ public class Rectangle {
     protected int length;
     protected int width;
 public Rectangle(int L, int W){
- length = L;
- width= W;
+ this.length = L;
+ this.width= W;
 }
 
-public static int getArea(){
-return length*width;
+public int getArea(){
+    return length *width;
 }
-public static int getPerimeter(){
+public int getPerimeter(){
     return (length*2)+(width*2);
 }
 
