@@ -30,7 +30,12 @@ public class Student {
         return (sum/grades.size());
     }
 
-    public static void main(String[] args) {
-
-    }
+    /*public static void main(String[] args) {      the system works
+Student Alex = new Student("Alex");
+        System.out.println(Alex.getName());
+        Alex.addGrade(80);
+        Alex.addGrade(70);
+        Alex.addGrade(100);
+        System.out.println(Alex.getGradeAverage());
+    }*/
 }
