@@ -65,26 +65,32 @@ public class GradesApplication {
         String contin = "y";
         while (contin.equalsIgnoreCase("y")) {
 
-        for (String i : students.keySet()) {
-            System.out.print("\t|" + i + "|\t");
-        }
-
-
-
+            for (String i : students.keySet()) {
+                System.out.print("\t|" + i + "|\t");
+            }
+            System.out.println("\nYou can also input all");
 
             System.out.println("\n\nWhat student would you like to see more information on?");
             String username = input.next();
-
-            if (students.get(username) == null) {
-                System.out.println("no known username, try again");
+            if (username.equalsIgnoreCase("all")) {
+                for(Student studentz: students.values()){
+                    System.out.println("Name: " + studentz.getName() + "\nGrades: ");
+                    studentz.getGrades();
+                    System.out.println("Average: " + studentz.getGradeAverage() + "%\tAttendance: " + studentz.attendancePercent() + "%");
+                    studentz.findAbsences();
+                    System.out.print("\n");
+                }
             } else {
-                Student user = students.get(username);
-                System.out.println("Name: " + user.getName() + "  Github_username: " + username + "\nGrades: ");
-                user.getGrades();
-                System.out.println("Average: "+user.getGradeAverage()+"%\tAttendance: "+ user.attendancePercent()+ "%");
-                user.findAbsences();
+                if (students.get(username) == null) {
+                    System.out.println("no known username, try again");
+                } else {
+                    Student user = students.get(username);
+                    System.out.println("Name: " + user.getName() + "  Github_username: " + username + "\nGrades: ");
+                    user.getGrades();
+                    System.out.println("Average: " + user.getGradeAverage() + "%\tAttendance: " + user.attendancePercent() + "%");
+                    user.findAbsences();
+                }
             }
-
             System.out.println("\nwould you like to see another student? Y/N");
             contin = input.next();
         }
