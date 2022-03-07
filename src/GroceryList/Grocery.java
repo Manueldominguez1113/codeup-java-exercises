@@ -85,7 +85,6 @@ public class Grocery {
 
     public static Grocery itemFinder() {
         System.out.println("which item would you like to edit? input the name:");
-        Input.getString(); //with nextline need to put an empty to clear it for some reason;
         String item = Input.getString();
 
         for (Grocery items : groceries) {
@@ -145,7 +144,7 @@ remover(run);
                             System.out.println("error! not found, try again");
                         }
                     } while (Grocery.selection(addItem) == null);
-                    System.out.println("how many " + addItem + "s would you like?");
+                    System.out.println("how many " + addItem + " would you like?");
                     count = Input.getInt();
                     if (count != 0) {
                         Grocery.addThis(Grocery.selection(addItem), count);
@@ -160,7 +159,7 @@ remover(run);
                             System.out.println("error! not found, try again");
                         }
                     } while (Grocery.selection(addItem) == null);
-                    System.out.println("how many " + addItem + "s would you like?");
+                    System.out.println("how many " + addItem + " would you like?");
                     count = Input.getInt();
                     if (count != 0) {
                         Grocery.addThis(Grocery.selection(addItem), count);
@@ -175,7 +174,7 @@ remover(run);
                             System.out.println("error! not found, try again");
                         }
                     } while (Grocery.selection(addItem) == null);
-                    System.out.println("how many " + addItem + "s would you like?");
+                    System.out.println("how many " + addItem + " would you like?");
                     count = Input.getInt();
                     if (count != 0) {
                         Grocery.addThis(Grocery.selection(addItem), count);
@@ -190,7 +189,7 @@ remover(run);
                             System.out.println("error! not found, try again");
                         }
                     } while (Grocery.selection(addItem) == null);
-                    System.out.println("how many " + addItem + "s would you like?");
+                    System.out.println("how many " + addItem + " would you like?");
                     count = Input.getInt();
                     if (count != 0) {
                         Grocery.addThis(Grocery.selection(addItem), count);
@@ -205,7 +204,7 @@ remover(run);
                             System.out.println("error! not found, try again");
                         }
                     } while (Grocery.selection(addItem) == null);
-                    System.out.println("how many " + addItem + "s would you like?");
+                    System.out.println("how many " + addItem + " would you like?");
                     count = Input.getInt();
                     if (count != 0) {
                         Grocery.addThis(Grocery.selection(addItem), count);

@@ -7,7 +7,7 @@ public class Input {
     private static final Scanner scanner= new Scanner(System.in);
 
     public static String getString() {
-        return scanner.nextLine();
+        return scanner.next();
     }
 
     public static boolean yesNo() // if y || yes || yeah, true, else false
