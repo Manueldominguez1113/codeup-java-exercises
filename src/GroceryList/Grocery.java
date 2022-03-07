@@ -3,13 +3,15 @@ package GroceryList;
 import util.Input;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+
 
 public class Grocery {
 
     private String name;
     private String category;
     private int quantity;
-    static ArrayList<Grocery> groceries= new ArrayList<>();
+    static ArrayList<Grocery> groceries = new ArrayList<>();
 
     public Grocery(String item, String category) {
         this.name = item;
@@ -25,7 +27,6 @@ public class Grocery {
     }
 
     static Grocery[] groceryList = Grocerylist.List();  //full list of store products
-
 
 
     public static void section(String category) {
@@ -50,16 +51,78 @@ public class Grocery {
         groceries.add(new Grocery(item, count));
     }
 
-    public static void viewList(){
-        int i =1;
+    public static Comparator<Grocery> groceryNameComparator = (s1, s2) -> {
+        String grocerName1 = s1.name;
+        String grocerName2 = s2.name;
 
+        //ascending order
+        return grocerName1.compareTo(grocerName2);
+
+        //descending order
+        //return grocerName2.compareTo(grocerName1);
+    };
+
+    public static Comparator<Grocery> groceryCategoryComparator = (s1, s2) -> {
+        String grocerCat1 = s1.category;
+        String grocerCat2 = s2.category;
+
+        //ascending order
+        return grocerCat1.compareTo(grocerCat2);
+
+    };
+
+    public static void viewList() {
+
+        groceries.sort(groceryNameComparator);
+        groceries.sort(groceryCategoryComparator);
         for (Grocery grocer : groceries) {
-            System.out.println(grocer.name+" " +grocer.category+" "+ grocer.quantity);
-            i++;
+
+            System.out.println(grocer.name + " " + grocer.category + " " + grocer.quantity);
+
         }
+        editList();
     }
 
+    public static Grocery itemFinder() {
+        System.out.println("which item would you like to edit? input the name:");
+        Input.getString(); //with nextline need to put an empty to clear it for some reason;
+        String item = Input.getString();
 
+        for (Grocery items : groceries) {
+            if (items.name.equalsIgnoreCase(item)) {
+                return items;
+            } else {
+                System.out.println("item not found in list, please type the name of the item in your grocery list.");
+            }
+        }
+        return itemFinder();
+    }
+
+    public static void remover(Grocery item) {
+groceries.remove(item);
+    }
+
+    public static void editList() {
+
+        System.out.println("would you like to edit an item? Y/N");
+        boolean edit = Input.yesNo();
+        while (edit) {
+
+            Grocery run = itemFinder();
+            System.out.println(run.name + " " + run.category + " " + run.quantity);
+            System.out.println("\n change the amount of this item, put 0 to remove this item");
+            int amount = Input.getInt();
+            if (amount == 0) {
+remover(run);
+            } else{
+                run.quantity = amount;
+            }
+
+
+            System.out.println("would you like to edit another item? Y/N");
+            edit = Input.yesNo();
+        }
+    }
 
     public static void groceryList() {
         boolean createList = true;
@@ -75,38 +138,78 @@ public class Grocery {
                 if (category == 1) {
                     do {
                         System.out.println("select a fruit");// link to list
-                        Grocery.section("fruit");
+                        Grocery.section("fruit"); //pulls list of fruits
                         addItem = Input.getString();
 
                         if (Grocery.selection(addItem) == null) {
                             System.out.println("error! not found, try again");
                         }
                     } while (Grocery.selection(addItem) == null);
-                    System.out.println("how many "+addItem+"s would you like?");
+                    System.out.println("how many " + addItem + "s would you like?");
                     count = Input.getInt();
-                    if (count !=0){
+                    if (count != 0) {
                         Grocery.addThis(Grocery.selection(addItem), count);
                     }
                 } else if (category == 2) {
-                    System.out.println("select a vegetable");//link to list
-                    Grocery.section("vegetables");
-                    addItem = Input.getString();
+                    do {
+                        System.out.println("select a vegetable");// link to list
+                        Grocery.section("vegetables");
+                        addItem = Input.getString();
 
+                        if (Grocery.selection(addItem) == null) {
+                            System.out.println("error! not found, try again");
+                        }
+                    } while (Grocery.selection(addItem) == null);
+                    System.out.println("how many " + addItem + "s would you like?");
+                    count = Input.getInt();
+                    if (count != 0) {
+                        Grocery.addThis(Grocery.selection(addItem), count);
+                    }
                 } else if (category == 3) {
-                    System.out.println("select a meat");//link to list
-                    Grocery.section("meat");
-                    addItem = Input.getString();
+                    do {
+                        System.out.println("select a meat");// link to list
+                        Grocery.section("meat");
+                        addItem = Input.getString();
 
+                        if (Grocery.selection(addItem) == null) {
+                            System.out.println("error! not found, try again");
+                        }
+                    } while (Grocery.selection(addItem) == null);
+                    System.out.println("how many " + addItem + "s would you like?");
+                    count = Input.getInt();
+                    if (count != 0) {
+                        Grocery.addThis(Grocery.selection(addItem), count);
+                    }
                 } else if (category == 4) {
-                    System.out.println("select a dairy product"); //link to list
-                    Grocery.section("dairy");
-                    addItem = Input.getString();
+                    do {
+                        System.out.println("select a dairy");// link to list
+                        Grocery.section("dairy");
+                        addItem = Input.getString();
 
+                        if (Grocery.selection(addItem) == null) {
+                            System.out.println("error! not found, try again");
+                        }
+                    } while (Grocery.selection(addItem) == null);
+                    System.out.println("how many " + addItem + "s would you like?");
+                    count = Input.getInt();
+                    if (count != 0) {
+                        Grocery.addThis(Grocery.selection(addItem), count);
+                    }
                 } else if (category == 5) {
-                    System.out.println("select from list");
-                    Grocery.section("all");
-                    addItem = Input.getString();
+                    do {
+                        System.out.println("select from list");// link to list
+                        Grocery.section("all");
+                        addItem = Input.getString();
 
+                        if (Grocery.selection(addItem) == null) {
+                            System.out.println("error! not found, try again");
+                        }
+                    } while (Grocery.selection(addItem) == null);
+                    System.out.println("how many " + addItem + "s would you like?");
+                    count = Input.getInt();
+                    if (count != 0) {
+                        Grocery.addThis(Grocery.selection(addItem), count);
+                    }
                 } else {
                     System.out.println("sorry, we didnt get the category you were looking for.");
                 }
