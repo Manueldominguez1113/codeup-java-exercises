@@ -31,8 +31,16 @@ public class Input {
     }
 
     public static int getInt(){
-        return scanner.nextInt();
+        try{
+           return Integer.parseInt(getString());
+        } catch(NumberFormatException e){
+            System.out.println("exception: please enter only a whole number. " + e.getMessage());
+            return getInt();
+        }
+
+        // Integer.valueOf(String s); says it's redundant by parseInt. --because Integer.valueOf(String s) == new Integer(Integer.parseInt(S))
     }
+
     public static double getDouble(double min, double max)
     {
         double input=0.00;
@@ -47,8 +55,33 @@ public class Input {
 
     }
     public static double getDouble(){
-        return scanner.nextDouble();
+        try {
+            return Double.parseDouble(getString());
+            // similar to the previous one, intellij thinks parseDouble is more efficient than valueOf.
+        } catch (NumberFormatException e){
+            System.out.println("Exception: please enter a valid number");
+        return getDouble();
+        }
     }
 
+    public static int getBinary(){
+        try {
+            return Integer.parseInt(getString(), 2);
+            // similar to the previous one, intellij thinks parseDouble is more efficient than valueOf.
+        } catch (NumberFormatException e){
+            System.out.println("Exception: please enter a valid number");
+            return getBinary();
+        }
+    }
+
+    public static int getHex(){
+        try {
+            return Integer.parseInt(getString(), 16);
+            // similar to the previous one, intellij thinks parseDouble is more efficient than valueOf.
+        } catch (NumberFormatException e){
+            System.out.println("Exception: please enter a valid number");
+            return getHex();
+        }
+    }
 }
 
