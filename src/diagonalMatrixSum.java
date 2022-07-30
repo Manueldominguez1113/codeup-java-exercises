@@ -74,19 +74,18 @@ public class diagonalMatrixSum {
             {5, 0, 10, 6, 4, 2}
 
     };
-    static int a = 2;
-    static int b = 1;
+    static int a = 2; // change these variables to test the function!
+    static int b = 3;
 
     public static void main(String[] args) {
         matrixCheck();
-        //System.out.println(Arrays.toString(matrixRun(1, 1))); //in a single 1x1 square, returns highest number, which is 20.
         System.out.println("\nhighest possible sum for rectangle " + a + "x" + b + ": " + matrixRun(a, b));               // now shall take in our length and width and return the highest sum
     }
 
     public static void matrixCheck() {
         for (int[] row : matrix) {                 //for(int i=0; i<matrix.length; i++){
             for (int number : row) {                // for(int x=0; x <matrix[i].length;i++)
-                System.out.print(" " + number);      //      sout(" "+matrix[i][x]);
+                System.out.printf("%02d ", number);      //      sout(" "+matrix[i][x]);
             }                                       //}
             System.out.print("\n");                 //sout("\n");
         }                                           //} }       basically just prints out each number in the matrix
