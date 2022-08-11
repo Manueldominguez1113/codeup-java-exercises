@@ -1,4 +1,5 @@
 import java.sql.SQLOutput;
+import java.util.HashMap;
 
 public class findLowestMissing {
 
@@ -12,6 +13,7 @@ public class findLowestMissing {
     }
 
     public static int answer(int[] arr) {
+        HashMap<Integer, Integer> a = new HashMap();
         //i need to sort the arr.
         for (int i = 0; i < arr.length; i++) {
             for (int j = i+1; j < arr.length; j++) {
