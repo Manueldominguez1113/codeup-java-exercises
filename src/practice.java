@@ -16,8 +16,13 @@ public class practice {
         a = a.toLowerCase();
         b = b.toLowerCase();
 
-        String[] c = a.split("").sort();
-        String[] d = b.split("").sort();
+        String[] c = a.split("");
+        String[] d = b.split("");
+        for(String letter: d){
+            // if c has index of d and not last iteration
+            // continue else return false
+            //on last iteration, if made it all the way through both arrays, return true instead.
+        }
     //
     return true;
     }
@@ -25,8 +30,8 @@ public class practice {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        String a = scan.next();
-        String b = scan.next();
+        String a = "search";
+        String b = "rescue";
         scan.close();
         boolean ret = isAnagram(a, b);
         System.out.println( (ret) ? "Anagrams" : "Not Anagrams" );
